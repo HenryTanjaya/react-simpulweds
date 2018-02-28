@@ -18,6 +18,9 @@ mongoose.connect(config.mongoURL);
 app.use(cors());
 app.use(morgan('combined'));
 app.use(bodyParser.json({type:'*/*'}));
+app.get("/",(req,res)=>{
+  res.send({helo:"asd"})
+})
 app.use('/api/user/', userRoutes);
 app.use('/api/landing/', landingRoutes);
 app.use('/api/portfolio/', portfolioRoutes);
