@@ -1,0 +1,12 @@
+export const AUTH_USER = 'auth_user';
+export const UNAUTH_USER = 'unauth_user';
+export const AUTH_ERROR = 'auth_error';
+export const SEND_FORM = "send_form";
+export const FETCH_MESSAGE = 'fetch_message';
+export const FETCH_LANDING = 'fetch_landing';
+export const UPDATE_LANDING = 'update_landing';
+export const FETCH_PORTFOLIO_INDEX = "fetch_portfolio_index";
+export const FETCH_PORTFOLIO_SHOW = "fetch_portfolio_show";
+export const NEW_PORTFOLIO = "new_portfolio";
+export const REMOVE_PORTFOLIO = "remove_portfolio";
+export const UPDATE_PORTFOLIO = "update_porfolio";

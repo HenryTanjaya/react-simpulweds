@@ -1,0 +1,141 @@
+/* Your custom styles */
+/* TEMPLATE STYLES */
+@font-face {
+  font-family: 'IrisUPC';
+  src: url('../font/upcil.ttf') format('truetype');
+}
+        /* Necessary for full page carousel*/
+
+        html,
+        body,
+        .view
+        {
+            height: 100%;
+            font-family: 'IrisUPC';
+            font-size: 1.2rem;
+        }
+        .carousel .carousel-control-prev-icon {
+            background-image: url(../img/svg/arrow_left.svg);
+        }
+
+        .carousel .carousel-control-next-icon {
+            background-image: url(../img/svg/arrow_right.svg);
+        }
+
+        .custom-hr-1{
+          background:#A62C23;
+          width:200px;
+          height:4px;
+        }
+
+        p.paragraph{
+          line-height: 2;
+          letter-spacing: 0.15rem;
+        }
+        .logo-signature h6 {
+            position: fixed;
+            bottom: 40px;
+            z-index: 10;
+            left: 40px;
+            transform: rotate(270deg);
+            transform-origin: left top 0;
+            letter-spacing: 3px;
+            color:grey;
+        }
+        /* contact */
+        input[type=text]:focus:not([readonly])+label{
+          color:grey;
+        }
+        input[type=text]:focus:not([readonly]){
+          border-bottom: 1px solid grey;
+          box-shadow:0 1px 0 0 grey;
+        }
+
+        .form-control:focus{
+          border-color:grey;
+        }
+
+        textarea.md-textarea:focus:not([readonly]){
+          border-bottom: 1px solid grey;
+          box-shadow:0 1px 0 0 grey;
+        }
+
+        textarea.md-textarea:focus:not([readonly])+label{
+          color:grey;
+        }
+        /* contact */
+        /* Navigation*/
+
+        .navbar {
+            background-color: transparent;
+            box-shadow:none;
+        }
+
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse {
+            background-color: grey;
+        }
+
+        footer.page-footer {
+            background-color: #1C2331;
+            margin-top: 0;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .display-3 {
+                font-size: 2rem;
+                margin-top: 6rem;
+            }
+            .logo-signature h6 {
+              display: none;
+            }
+        }
+
+
+
+        /*Caption*/
+
+        .flex-center {
+            color: #fff;
+        }
+        @media (min-width: 1200px){
+          /* Carousel*/
+          .carousel,
+          .carousel-item{
+              height: 100%;
+          }
+
+          .carousel-inner {
+              max-height: 100%;
+          }
+
+          .container{
+            max-width: 1240px;
+          }
+        }
+
+
+
+        @media (min-width: 776px) {
+            .carousel .view ul li {
+                display: inline;
+            }
+            .carousel .view .full-bg-img ul li .flex-item {
+                margin-bottom: 1.5rem;
+            }
+
+        }
+
+
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
