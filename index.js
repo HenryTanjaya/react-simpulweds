@@ -26,7 +26,7 @@ if(process.env.NODE_ENV==='production'){
   app.use(express.static('client'));
   const path = require('path');
   app.get("*",(req,res)=>{
-    res.send(path.resolve('client','index.html'))
+    res.send(path.resolve(__dirname,'client','index.html'))
   })
 }
 
