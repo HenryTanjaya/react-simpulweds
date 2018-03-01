@@ -15,14 +15,7 @@ class HeaderIndex extends Component {
         </li>
         ]
     } else {
-      return [
-        <li className="nav-item px-3" key={5}>
-          <Link className="nav-link" to="/signin" style={{color:'grey'}}>Sign in</Link>
-        </li>,
-        <li className="nav-item px-3" key={6}>
-          <Link className="nav-link" to="/signup" style={{color:'grey'}}>Sign up</Link>
-        </li>
-      ];
+      return [];
     }
   }
 
@@ -39,25 +32,25 @@ class HeaderIndex extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
             <li className="nav-item px-3" key={1}>
-              <Link className="nav-link" to="#" style={{color:'grey'}}>Photo</Link>
+              <a className="nav-link" href="/#photo" style={{color:'grey'}}>Photo</a>
             </li>
             <li className="nav-item px-3" key={2}>
-              <Link className="nav-link" to="#" style={{color:'grey'}}>Film</Link>
+              <a className="nav-link" href="/#film" style={{color:'grey'}}>Film</a>
             </li>
             <li className="nav-item px-3" key={3}>
               <Link className="nav-link" to="/memories" style={{color:'grey'}}>Memories</Link>
             </li>
             <li className="nav-item px-3" key={4}>
-              <Link className="nav-link" to="#" style={{color:'grey'}}>Contacts</Link>
+              <a className="nav-link" href="/#contact" style={{color:'grey'}}>Contacts</a>
             </li>
               {this.renderLinks()}
             </ul>
             <ul className="navbar-nav" >
               <li className="nav-item px-3">
-                  <a className="nav-link" href="#" style={{color:'grey'}}>Facebook</a>
+                  <a className="nav-link" href="https://www.facebook.com/simpulweds/" style={{color:'grey'}}>Facebook</a>
               </li>
               <li className="nav-item pl-3">
-                  <a className="nav-link" href="#" style={{color:'grey'}}>Instagram</a>
+                  <a className="nav-link" href="https://www.instagram.com/simpulweds/" style={{color:'grey'}}>Instagram</a>
               </li>
             </ul>
         </div>

@@ -2,7 +2,11 @@ import axios from 'axios';
 import {reset} from 'redux-form';
 import {browserHistory} from 'react-router';
 import {AUTH_USER,AUTH_ERROR,UNAUTH_USER,FETCH_LANDING,UPDATE_LANDING,FETCH_PORTFOLIO_INDEX,FETCH_PORTFOLIO_SHOW,UPDATE_PORTFOLIO,NEW_PORTFOLIO,REMOVE_PORTFOLIO,SEND_FORM} from './types';
-const ROOT_URL='https://simpulweds.herokuapp.com';
+var ROOT_URL='https://simpulweds.herokuapp.com';
+const hostname = window && window.location && window.location.hostname;
+if(hostname==="localhost"){
+  ROOT_URL='http://localhost:3090'
+}
 
 export function signinUser(values){
   const {email,password} = values;

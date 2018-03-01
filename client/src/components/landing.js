@@ -1,6 +1,7 @@
 import React ,{Component} from 'react';
 import { reduxForm ,Field,reset} from 'redux-form';
 import {connect} from 'react-redux';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import * as actions from '../actions';
 
 class Landing extends Component{
@@ -28,6 +29,7 @@ renderContact(){
   const {handleSubmit} = this.props
   return (
     <div className="row p-5" style={{height:'800px'}}>
+    <ScrollableAnchor id={'contact'}>
       <div className="container" style={{margin:'auto'}}>
         <div className="row">
           <h2 className="section-heading pt-4 px-3">Contact us</h2>
@@ -86,6 +88,7 @@ renderContact(){
           </div>
         </div>
       </div>
+      </ScrollableAnchor>
     </div>
   )
 }
@@ -112,6 +115,7 @@ renderImage(){
   }
   return(
     <div className="row px-3">
+    <ScrollableAnchor id={'photo'}>
       <div className="container" style={{margin:'auto'}}>
         <div className="row">
           <div className="col-lg-5 col-md-12" style={{margin:'auto'}}>
@@ -138,6 +142,7 @@ renderImage(){
           </div>
         </div>
       </div>
+      </ScrollableAnchor>
     </div>
   )
 
@@ -189,6 +194,7 @@ renderCarouselHome(){
     </div>
 
     <div className="row p-5" style={{height:'800px'}}>
+    <ScrollableAnchor id={'film'}>
       <div className="container" style={{margin:'auto'}}>
         <div className="row">
           <div className="col-lg-7 col-md-12">
@@ -205,6 +211,7 @@ renderCarouselHome(){
           </div>
         </div>
       </div>
+      </ScrollableAnchor>
     </div>
 
     </div>
