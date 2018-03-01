@@ -23,7 +23,7 @@ app.use('/api/landing/', landingRoutes);
 app.use('/api/portfolio/', portfolioRoutes);
 
 if(process.env.NODE_ENV==='production'){
-  app.use(express.static('client/build'));
+  app.use(express.static('client'));
   const path = require('path');
   app.get("*",(req,res)=>{
     res.send(path.resolve(__dirname,'client','index.html'))
