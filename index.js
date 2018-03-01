@@ -18,12 +18,17 @@ mongoose.connect(keys.mongoURL);
 app.use(cors());
 app.use(morgan('combined'));
 app.use(bodyParser.json({type:'*/*'}));
-app.get("/",(req,res)=>{
-  res.send({helo:"asd"})
-})
 app.use('/api/user/', userRoutes);
 app.use('/api/landing/', landingRoutes);
 app.use('/api/portfolio/', portfolioRoutes);
+
+if(process.env.NODE_ENV==='production'){
+  app.use(express.static('client/build'));
+  const path = require('path');
+  app.get("*",(req,res)=>{
+    res.send(path.resolve(__dirname,'client','build','index.html'))
+  })
+}
 
 const PORT = process.env.PORT||3090;
 app.listen(PORT,function(){
