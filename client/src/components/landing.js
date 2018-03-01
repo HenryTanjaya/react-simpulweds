@@ -28,7 +28,7 @@ renderField(field){
 renderContact(){
   const {handleSubmit} = this.props
   return (
-    <div className="row p-5" style={{height:'800px'}}>
+    <div className="row px-3 pt-5" style={{height:'800px'}}>
     <ScrollableAnchor id={'contact'}>
       <div className="container" style={{margin:'auto'}}>
         <div className="row">
