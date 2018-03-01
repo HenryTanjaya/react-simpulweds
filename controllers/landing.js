@@ -1,5 +1,5 @@
 const Landing = require('../models/landing');
-const config = require('../config');
+const keys = require('../config/keys');
 const nodemailer = require('nodemailer');
 
 // SHOW Landing
@@ -25,7 +25,7 @@ exports.sendForm = function(req,res,next){
       service: 'gmail',
       auth: {
         user: 'alderbeagle@gmail.com',
-        pass: config.gmailPassword
+        pass: keys.gmailPassword
       }
     });
 

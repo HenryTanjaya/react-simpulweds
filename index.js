@@ -7,12 +7,12 @@ const landingRoutes = require('./routes/landing');
 const portfolioRoutes = require('./routes/portfolio');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const config = require('./config');
+const keys = require('./config/keys');
 const seedDB = require("./seed");
 // seedDB();
 
 //db setup
-mongoose.connect(config.mongoURL);
+mongoose.connect(keys.mongoURL);
 
 //app setup
 app.use(cors());
