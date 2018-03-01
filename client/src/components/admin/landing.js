@@ -21,6 +21,7 @@ class AdminLanding extends Component {
     } else {
       newLanding.photo=values.photo.split(',');
     }
+    console.log(newLanding);
     this.props.updateLanding(newLanding);
   }
 
