@@ -15,7 +15,7 @@ class AdminPortfolio extends Component {
           <div>
           <li key={portfolio._id+"edit"}>
             <Link to={`/admin/memories/${portfolio._id}`}>
-              {portfolio._id}
+              {portfolio.groom}&{portfolio.bride}
             </Link>
           </li>
           </div>
