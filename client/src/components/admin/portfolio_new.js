@@ -13,7 +13,7 @@ class AdminPortfolioNew extends Component {
   renderField(field){
     return (
       <div>
-        <input {...field.input} type={field.type} className="form-control"/>
+        <input {...field.input} type={field.type} className="form-control" style={{fontSize:'1.3rem'}}/>
       </div>
     )
   }
@@ -22,7 +22,7 @@ class AdminPortfolioNew extends Component {
   render(){
     const {handleSubmit,fields:{image,bride,groom,paragraph,video,image_slideshow}} = this.props
     return(
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} style={{fontSize:'1.3rem'}} className="container">
       <fieldset className="form-group">
         <label>Image:</label>
         <Field name="image" component={this.renderField}  type="text" />

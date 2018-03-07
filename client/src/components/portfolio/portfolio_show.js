@@ -34,7 +34,7 @@ class PortfolioShow extends Component {
     if(!video){
       return(
         <div>
-          <img src={image} class="img-fluid" key={image}/>
+          <img src={image} className="img-fluid" key={image}/>
         </div>
       )
     } else {

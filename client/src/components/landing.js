@@ -203,7 +203,7 @@ renderCarouselHome(){
             </div>
           </div>
           <div className="col-lg-4 col-md-12 text-md-left">
-            <p className="paragraph pt-3">
+            <p className="paragraph">
             We believe that you are the narrator of your own story.
             Your story deserves to be more than just a doctored plot; your story deserves to be a reflection of your honest, true self – and that’ s what we do here at
             Simpul Weds: a distinctively your story that depicts what matters to you.

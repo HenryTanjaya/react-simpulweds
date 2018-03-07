@@ -25,7 +25,7 @@ class AdminPortfolio extends Component {
   }
   render(){
     return(
-      <div>
+      <div className="container">
       Memories Admin
       <ul>
         <li key={1}>

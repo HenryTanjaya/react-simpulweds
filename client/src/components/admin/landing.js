@@ -28,7 +28,7 @@ class AdminLanding extends Component {
   renderField(field){
     return (
       <div>
-        <input {...field.input} type={field.type} className="form-control"/>
+        <input {...field.input} type={field.type} className="form-control" style={{fontSize:'1.3rem'}}/>
       </div>
     )
   }
@@ -49,7 +49,7 @@ class AdminLanding extends Component {
   render(){
     const {handleSubmit} = this.props
     return(
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} style={{fontSize:'1.3rem'}} className="container">
         <fieldset className="form-group">
           <label>Home Photo :</label>
           <Field name="homephoto" component={this.renderField}  type="text" />

@@ -12,7 +12,7 @@
         {
             height: 100%;
             font-family: 'IrisUPC';
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         .carousel .carousel-control-prev-icon {
             background-image: url(../img/svg/arrow_left.svg);
@@ -29,8 +29,8 @@
         }
 
         p.paragraph{
-          line-height: 2;
-          letter-spacing: 0.15rem;
+          line-height: 1.5;
+          letter-spacing: 0.13rem;
         }
         .logo-signature h6 {
             position: fixed;
