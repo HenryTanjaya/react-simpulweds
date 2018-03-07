@@ -65,7 +65,7 @@ class PortfolioShow extends Component {
             </p>
           </div>
           </div>
-          <div className="pt-4">Back to our memories</div>
+          <div className="pt-4"><Link to ="/memories">Back to our memories</Link></div>
         </div>
       </div>
     )
