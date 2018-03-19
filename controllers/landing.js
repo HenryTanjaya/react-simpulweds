@@ -22,15 +22,23 @@ exports.updateLanding = function(req,res,next){
 
 exports.sendForm = function(req,res,next){
   var transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port:465,
+      secure:true,
       auth: {
-        user: 'alderbeagle@gmail.com',
-        pass: keys.googlePassword
+          type:'OAuth2',
+          user: 'alderbeagle@gmail.com',
+          clientID: keys.clientID,
+          clientSecret: keys.clientSecret,
+          refreshToken: keys.refreshToken,
+          accessToken:keys.accessToken,
+          expires:123123123
+          // pass: keys.googlePassword
       }
     });
 
     var mailOptions = {
-      from: 'simpulweds@gmail.com',
+      from: 'alderbeagle@gmail.com',
       to: 'simpulweds@gmail.com',
       subject: 'Form',
       html: '<b>Name : </b>'+req.body.name +
@@ -42,9 +50,11 @@ exports.sendForm = function(req,res,next){
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         res.status(200).json({message:error})
+        console.log(error)
       } else {
         res.status(200).json({message:"email sent"})
       }
+      transporter.close();
     });
 }
 
