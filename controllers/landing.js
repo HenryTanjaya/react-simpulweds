@@ -25,7 +25,7 @@ exports.sendForm = function(req,res,next){
       service: 'gmail',
       auth: {
         user: 'alderbeagle@gmail.com',
-        pass: keys.gmailPassword
+        pass: keys.googlePassword
       }
     });
 
@@ -41,9 +41,11 @@ exports.sendForm = function(req,res,next){
 
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
-        res.status(200).json({message:error})
+        res.json({message:error})
+        console.log(error);
       } else {
-        res.status(200).json({message:"email sent"})
+        res.json({message:"email sent"})
+        console.log("done");
       }
     });
 }
