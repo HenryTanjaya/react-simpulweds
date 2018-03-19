@@ -41,11 +41,9 @@ exports.sendForm = function(req,res,next){
 
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
-        res.json({message:error})
-        console.log(error);
+        res.status(200).json({message:error})
       } else {
-        res.json({message:"email sent"})
-        console.log("done");
+        res.status(200).json({message:"email sent"})
       }
     });
 }
