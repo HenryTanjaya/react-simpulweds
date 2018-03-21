@@ -66,10 +66,10 @@ exports.sendForm =function(req,res,next){
   var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
   var data = {
-    from: 'Simpul Weds Client <'+req.body.email+'>',
+    from: 'Website Client <simpulweds@samples.mailgun.org>',
     to: 'simpulweds@gmail.com',
     subject: 'Hello',
-    text: '<b>Name : </b>'+req.body.name +
+    html: '<b>Name : </b>'+req.body.name +
           '<br><b>Email : </b>'+req.body.email +
           '<br><b>Country : </b>'+req.body.country +
           '<br><b>Message : </b>'+req.body.message
