@@ -61,8 +61,8 @@ exports.updateLanding = function(req,res,next){
 
 exports.sendForm =function(req,res,next){
   var mailgun = require("mailgun-js");
-  var api_key = 'key-a8e4f402cbe489af83f4eeeacdbddb6d';
-  var DOMAIN = 'sandbox930aa6e0e6fb4377a488c31114646560.mailgun.org';
+  var api_key = keys.mailgunAPI;
+  var DOMAIN = keys.mailgunDomain;
   var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
   var data = {
