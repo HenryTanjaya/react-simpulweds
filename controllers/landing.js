@@ -1,6 +1,7 @@
 const Landing = require('../models/landing');
 const keys = require('../config/keys');
 const nodemailer = require('nodemailer');
+const xoauth2 = require('xoauth2');
 
 // SHOW Landing
 exports.getLanding = function(req,res,next){
@@ -20,42 +21,69 @@ exports.updateLanding = function(req,res,next){
     });
 }
 
-exports.sendForm = function(req,res,next){
-  var transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port:465,
-      secure:true,
-      auth: {
-          type:'OAuth2',
-          user: 'alderbeagle@gmail.com',
-          clientID: keys.clientID,
-          clientSecret: keys.clientSecret,
-          refreshToken: keys.refreshToken,
-          accessToken:keys.accessToken,
-          expires:123123123
-          // pass: keys.googlePassword
-      }
-    });
+// exports.sendForm = function(req,res,next){
+//   var transporter = nodemailer.createTransport({
+//       host: 'smtp.gmail.com',
+//       port:465,
+//       secure:true,
+//       auth: {
+//           type:'OAuth2',
+//           user: 'alderbeagle@gmail.com',
+//           clientID: keys.clientID,
+//           clientSecret: keys.clientSecret,
+//           refreshToken: keys.refreshToken,
+//           accessToken:keys.accessToken,
+//           expires:123123123
+//           // pass: keys.googlePassword
+//       }
+//     });
+//
+//     var mailOptions = {
+//       from: 'alderbeagle@gmail.com',
+//       to: 'simpulweds@gmail.com',
+//       subject: 'Form',
+//       html: '<b>Name : </b>'+req.body.name +
+//             '<br><b>Email : </b>'+req.body.email +
+//             '<br><b>Country : </b>'+req.body.country +
+//             '<br><b>Message : </b>'+req.body.message
+//     };
+//
+//     transporter.sendMail(mailOptions, function(error, info){
+//       if (error) {
+//         res.status(200).json({message:error})
+//         console.log(error)
+//       } else {
+//         res.status(200).json({message:"email sent"})
+//       }
+//       transporter.close();
+//     });
+// }
 
-    var mailOptions = {
-      from: 'alderbeagle@gmail.com',
-      to: 'simpulweds@gmail.com',
-      subject: 'Form',
-      html: '<b>Name : </b>'+req.body.name +
-            '<br><b>Email : </b>'+req.body.email +
-            '<br><b>Country : </b>'+req.body.country +
-            '<br><b>Message : </b>'+req.body.message
-    };
+exports.sendForm =function(req,res,next){
+  var mailgun = require("mailgun-js");
+  var api_key = 'key-a8e4f402cbe489af83f4eeeacdbddb6d';
+  var DOMAIN = 'sandbox930aa6e0e6fb4377a488c31114646560.mailgun.org';
+  var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        res.status(200).json({message:error})
-        console.log(error)
-      } else {
-        res.status(200).json({message:"email sent"})
-      }
-      transporter.close();
-    });
+  var data = {
+    from: 'Simpul Weds Client <'+req.body.email+'>',
+    to: 'simpulweds@gmail.com',
+    subject: 'Hello',
+    text: '<b>Name : </b>'+req.body.name +
+          '<br><b>Email : </b>'+req.body.email +
+          '<br><b>Country : </b>'+req.body.country +
+          '<br><b>Message : </b>'+req.body.message
+  };
+
+  mailgun.messages().send(data, function (error, body) {
+    if (error) {
+      res.status(200).json({message:error})
+      console.log(error)
+    } else {
+      res.status(200).json({message:"email sent"})
+    }
+  });
+
 }
 
 
